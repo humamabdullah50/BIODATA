@@ -1,1 +1,405 @@
-# BIODATA
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Humam Abdullah</title>
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS (Gaya Tampilan Gelap Modern) --- */
+        :root {
+            --bg-color: #0f172a;       /* Latar belakang utama */
+            --card-bg: #1e293b;        /* Latar belakang kartu */
+            --text-color: #e2e8f0;     /* Warna teks */
+            --text-muted: #94a3b8;     /* Warna teks sekunder */
+            --accent-color: #38bdf8;   /* Warna aksen (Biru Langit) */
+            --accent-hover: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigasi --- */
+        nav {
+            background-color: rgba(15, 23, 42, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #334155;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Container Utama --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Beranda (Home) Section --- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .scroll-down {
+            margin-top: 40px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* --- Section Styling Umum --- */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: white;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* --- Tentang Saya (Bio) --- */
+        .bio-text {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            text-align: justify;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .info-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        /* --- Hobi Section --- */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .hobby-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover {
+            background: #263344;
+            transform: scale(1.02);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--accent-color);
+        }
+
+        .hobby-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .hobby-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            border-top: 1px solid #334155;
+            margin-top: 40px;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Humam.</a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#hobbies">Hobi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Bagian Beranda (Home) -->
+        <section id="home">
+            <!-- 
+                PENTING: Ganti 'foto-saya.jpg' dengan nama file fotomu.
+                Pastikan foto ada di folder yang sama dengan file html ini.
+            -->
+            <img src="Screenshot 2026-02-23 151021.PNG" alt="Foto Humam" class="profile-img" id="myPhoto">
+            
+            <h1 id="typing-text">Humam Abdullah</h1>
+            <p>Siswa X-MIPA-1 | MAS RIAB</p>
+            
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- Bagian Tentang Saya -->
+        <section id="about">
+            <h2 class="section-title">Tentang Saya</h2>
+            
+            <!-- Teks Bio Lengkap -->
+            <div class="bio-text">
+                <p>
+                    Halo! Saya <strong>Humam Abdullah</strong>, seorang pelajar yang bersemangat dalam belajar dan mengembangkan diri. Saya berasal dari <strong>Takengon</strong> dan saat ini tinggal di <strong>Kabupaten Aceh Tengah, Kecamatan Bebesen, Dusun Simpang Empat</strong>. 
+                </p>
+                <br>
+                <p>
+                    Saya saat ini menempuh pendidikan di <strong>MAS RIAB</strong> pada kelas <strong>X-MIPA-1</strong>. Saya lahir pada tanggal <strong>05 September 2010</strong>. Selain bersekolah, saya memiliki banyak minat dan hobi yang saya tekuni untuk mengisi waktu luang.
+                </p>
+            </div>
+
+            <!-- Kartu Informasi Singkat -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-label">Nama Lengkap</div>
+                    <div class="info-value">Humam Abdullah</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Sekolah</div>
+                    <div class="info-value">MAS RIAB</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Kelas</div>
+                    <div class="info-value">X-MIPA-1</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Asal Daerah</div>
+                    <div class="info-value">Aceh Tengah</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Hobi -->
+        <section id="hobbies">
+            <h2 class="section-title">Hobi & Minat</h2>
+            <div class="hobbies-grid">
+                <!-- Hobi 1: Catur -->
+                <div class="hobby-card">
+                    <i class="fas fa-chess-knight hobby-icon"></i>
+                    <h3 class="hobby-title">Catur</h3>
+                    <p class="hobby-desc">Menyukai strategi dan taktik dalam permainan catur.</p>
+                </div>
+                <!-- Hobi 2: Voli -->
+                <div class="hobby-card">
+                    <i class="fas fa-volleyball-ball hobby-icon"></i>
+                    <h3 class="hobby-title">Voli</h3>
+                    <p class="hobby-desc">Aktif bermain voli dan suka olahraga tim.</p>
+                </div>
+                <!-- Hobi 3: Psikologi -->
+                <div class="hobby-card">
+                    <i class="fas fa-brain hobby-icon"></i>
+                    <h3 class="hobby-title">Psikologi</h3>
+                    <p class="hobby-desc">Suka mempelajari perilaku manusia dan ilmu jiwa.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Humam Abdullah. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
+    <!-- Musik Tersembunyi (Auto Play) -->
+    <!-- Ganti 'about-you.mp3' dengan nama file lagumu -->
+    <audio id="bgMusic" loop>
+        <source src="The 1975 - About You (Official).mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Script untuk efek mengetik nama
+        const nameElement = document.getElementById('typing-text');
+        const originalText = nameElement.innerText;
+        nameElement.innerText = '';
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < originalText.length) {
+                nameElement.innerText += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Jalankan saat halaman dimuat
+        window.onload = typeWriter;
+
+        // Script untuk Musik Auto Play
+        // Catatan: Browser modern sering memblokir autoplay suara tanpa interaksi user.
+        // Script ini mencoba memutar musik, jika gagal user bisa klik di mana saja untuk memutar.
+        window.addEventListener('load', function() {
+            const music = document.getElementById('bgMusic');
+            music.volume = 0.5; // Set volume 50%
+            
+            // Coba putar musik
+            music.play().catch(function(error) {
+                console.log("Autoplay diblokir oleh browser. User perlu interaksi.");
+            });
+        });
+    </script>
+</body>
+</html>
